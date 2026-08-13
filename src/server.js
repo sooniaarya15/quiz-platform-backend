@@ -7,13 +7,13 @@ const rateLimit = require('express-rate-limit');
 const { sequelize } = require('./models');
 
 const authRoutes = require('./routes/authRoutes');
-// const userRoutes = require('./routes/userRoutes');
-// const categoryRoutes = require('./routes/categoryRoutes');
-// const quizRoutes = require('./routes/quizRoutes');
-// const questionUpdateRoutes = require('./routes/questionUpdateRoutes');
-// const attemptRoutes = require('./routes/attemptRoutes');
+const userRoutes = require('./routes/userRoutes');
+const categoryRoutes = require('./routes/categoryRoutes');
+const quizRoutes = require('./routes/quizRoutes');
+const questionUpdateRoutes = require('./routes/questionUpdateRoutes');
+const attemptRoutes = require('./routes/attemptRoutes');
 // const leaderboardRoutes = require('./routes/leaderboardRoutes');
-// const analyticsRoutes = require('./routes/analyticsRoutes');
+const analyticsRoutes = require('./routes/analyticsRoutes');
 
 const app = express();
 
@@ -27,13 +27,13 @@ app.use('/api', limiter);
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 
 app.use('/api/auth', authRoutes);
-// app.use('/api/users', userRoutes);
-// app.use('/api/categories', categoryRoutes);
-// app.use('/api/quizzes', quizRoutes);
-// app.use('/api/questions', questionUpdateRoutes);
-// app.use('/api/attempts', attemptRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/categories', categoryRoutes);
+app.use('/api/quizzes', quizRoutes);
+app.use('/api/questions', questionUpdateRoutes);
+app.use('/api/attempts', attemptRoutes);
 // app.use('/api/leaderboard', leaderboardRoutes);
-// app.use('/api/admin', analyticsRoutes);
+app.use('/api/admin', analyticsRoutes);
 
 app.use((err, req, res, next) => {
   console.error(err);
