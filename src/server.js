@@ -32,7 +32,7 @@ app.use('/api/categories', categoryRoutes);
 app.use('/api/quizzes', quizRoutes);
 app.use('/api/questions', questionUpdateRoutes);
 app.use('/api/attempts', attemptRoutes);
-// app.use('/api/leaderboard', leaderboardRoutes);
+app.use('/api/leaderboard', leaderboardRoutes);
 app.use('/api/admin', analyticsRoutes);
 
 app.use((err, req, res, next) => {

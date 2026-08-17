@@ -6,7 +6,7 @@ function generateToken(user){
             id: user.id, role: user.role
         },
         process.env.JWT_SECRET,
-        { expireIn: process.env.JWT_EXPIRES_IN || '7D' }
+        { expiresIn: process.env.JWT_EXPIRES_IN || '7D' }
     );
 }
 
