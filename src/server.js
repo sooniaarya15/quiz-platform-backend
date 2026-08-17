@@ -12,7 +12,7 @@ const categoryRoutes = require('./routes/categoryRoutes');
 const quizRoutes = require('./routes/quizRoutes');
 const questionUpdateRoutes = require('./routes/questionUpdateRoutes');
 const attemptRoutes = require('./routes/attemptRoutes');
-// const leaderboardRoutes = require('./routes/leaderboardRoutes');
+const leaderboardRoutes = require('./routes/leaderboardRoutes');
 const analyticsRoutes = require('./routes/analyticsRoutes');
 
 const app = express();
