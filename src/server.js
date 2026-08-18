@@ -24,6 +24,7 @@ app.use(express.json({ limit: '2mb' }));
 const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 300 });
 app.use('/api', limiter);
 
+app.get('/', (req, res) => res.json({ message: 'Quiz Platform API is running. Try /api/health' }));
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 
 app.use('/api/auth', authRoutes);
