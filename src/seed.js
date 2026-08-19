@@ -22,7 +22,7 @@ async function seed() {
       description: 'Test your knowledge of JavaScript fundamentals.',
       categoryId: jsCategory.id,
       difficulty: 'INTERMEDIATE',
-      duration: 20,
+      duration: 10,
       passingScore: 60,
       maxAttempts: 2,
       status: 'PUBLISHED',
